@@ -12,6 +12,7 @@
 		D2E17A30231A154600106C14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E17A2E231A154600106C14 /* Main.storyboard */; };
 		D2E17A32231A154700106C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2E17A31231A154700106C14 /* Assets.xcassets */; };
 		D2E17A35231A154700106C14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2E17A33231A154700106C14 /* LaunchScreen.storyboard */; };
+		D2E17A3D231A160F00106C14 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D2E17A3C231A160F00106C14 /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D2E17A31231A154700106C14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2E17A34231A154700106C14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2E17A36231A154700106C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2E17A3C231A160F00106C14 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				D2E17A31231A154700106C14 /* Assets.xcassets */,
 				D2E17A33231A154700106C14 /* LaunchScreen.storyboard */,
 				D2E17A36231A154700106C14 /* Info.plist */,
+				D2E17A3C231A160F00106C14 /* Inceptionv3.mlmodel */,
 			);
 			path = CatOrNot;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2E17A2D231A154600106C14 /* ViewController.swift in Sources */,
+				D2E17A3D231A160F00106C14 /* Inceptionv3.mlmodel in Sources */,
 				D2E17A2B231A154600106C14 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +296,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ouchmousestudios.CatOrNot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ouchmousestudios.CatOrNot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
