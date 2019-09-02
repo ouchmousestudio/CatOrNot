@@ -16,6 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraImageView: UIImageView!
     
     let imagePicker = UIImagePickerController()
+    let imagePicker2 = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
         
+        imagePicker2.delegate = self
+        imagePicker2.sourceType = .photoLibrary
+        imagePicker2.allowsEditing = false
+        
     }
-    //Image Text
-    @IBOutlet weak var imageText: UILabel!
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -41,6 +44,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         imagePicker.dismiss(animated: true, completion: nil)
+        imagePicker2.dismiss(animated: true, completion: nil)
         
     }
     
@@ -60,12 +64,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 let parts = firstResult.identifier.components(separatedBy: ", ")
                 if firstResult.identifier.contains("cat") {
                     //Change Nav title
-                self.navigationItem.title = "It's a Cat!"
-                    //Change text box
-                    self.imageText.text = ""
+                ProgressHUD.imageSuccess(UIImage(named: "CatSuccessx2"))
+                    ProgressHUD.showSuccess("It's a cat!")
             }  else {
-                    self.navigationItem.title = "It's not a Cat!"
-                    self.imageText.text = "...It's a " + parts[0]
+                ProgressHUD.imageError(UIImage(named: "CatFailx2"))
+                    ProgressHUD.showError("It's not a cat! \n It's a \(parts[0])")
                 }
             }
         }
@@ -87,5 +90,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
+    @IBAction func photoSelectTapped(_ sender: UIBarButtonItem) {
+        
+        present(imagePicker2, animated: true, completion: nil)
+    }
 }
 
