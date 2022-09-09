@@ -54,8 +54,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func detect(image: CIImage) {
-        
-        guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
+        let config = MLModelConfiguration()
+        guard let model = try? VNCoreMLModel(for: Inceptionv3(configuration: config).model) else {
             fatalError("Loading CoreML Model Failed")
         }
         
